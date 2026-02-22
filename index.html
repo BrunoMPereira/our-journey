@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey Together</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="A beautiful tracker showing exactly how long we've been together since June 23, 2024.">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1 class="title">Our Journey Together</h1>
+            <p class="subtitle">Since June 23, 2024</p>
+        </header>
+
+        <section class="time-breakdown">
+            <div class="glass-card main-clock">
+                <h2>Time Ticking</h2>
+                <div id="detailed-time" class="time-display">
+                    <!-- JS will populate this -->
+                    <span class="loading">Calculate our time...</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="big-numbers">
+            <div class="glass-card stat-card">
+                <h3>Total Hours</h3>
+                <div id="total-hours" class="number">0</div>
+            </div>
+            <div class="glass-card stat-card">
+                <h3>Total Minutes</h3>
+                <div id="total-minutes" class="number">0</div>
+            </div>
+            <div class="glass-card stat-card">
+                <h3>Total Seconds</h3>
+                <div id="total-seconds" class="number">0</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
