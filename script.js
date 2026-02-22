@@ -15,12 +15,13 @@ function updateTime() {
     const formatNumber = (num) => num.toLocaleString('en-US');
 
     // Update the DOM for big numbers
-    document.getElementById('total-seconds').textContent = formatNumber(totalSeconds);
+    const secondsInMillions = Math.floor(totalSeconds / 1000000);
+    document.getElementById('total-seconds').textContent = `> ${secondsInMillions}M`;
     document.getElementById('total-minutes').textContent = formatNumber(totalMinutes);
     document.getElementById('total-hours').textContent = formatNumber(totalHours);
 
     // Calculate detailed breakdown (Years, Months, Days, Hours, Minutes, Seconds)
-    
+
     // An elegant way to compute absolute calendar difference
     let years = now.getFullYear() - startDate.getFullYear();
     let months = now.getMonth() - startDate.getMonth();
