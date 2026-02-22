@@ -93,7 +93,7 @@ function setRandomQuote() {
     const randomIndex = Math.floor(Math.random() * songQuotes.length);
 
     // The fixed introductory text requested by the user
-    const introText = `I have more and i want to present not one sentence but one text at the beginning, the texts are separated by an enter`;
+    const introText = `Aqui está um pequeno excerto de uma música da nossa história <3`;
 
     // Replace newline characters with HTML <br> tags so lyrics display multiline 
     const randomLyricFormatted = songQuotes[randomIndex].replace(/\n/g, '<br>');
