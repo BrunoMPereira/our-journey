@@ -56,17 +56,17 @@ function updateTime() {
 
     // Build the detailed display HTML
     const timeUnits = [
-        { value: years, label: years === 1 ? 'Year' : 'Years' },
-        { value: months, label: months === 1 ? 'Month' : 'Months' },
-        { value: days, label: days === 1 ? 'Day' : 'Days' },
-        { value: hPad(hours), label: 'Hours' },
-        { value: hPad(minutes), label: 'Minutes' },
-        { value: hPad(seconds), label: 'Seconds' }
+        { value: years, label: years === 1 ? 'Ano' : 'Anos' },
+        { value: months, label: months === 1 ? 'Mês' : 'Meses' },
+        { value: days, label: days === 1 ? 'Dia' : 'Dias' },
+        { value: hPad(hours), label: 'Horas' },
+        { value: hPad(minutes), label: 'Minutos' },
+        { value: hPad(seconds), label: 'Segundos' }
     ];
 
     let detailedHtml = '';
     for (const unit of timeUnits) {
-        if (unit.value > 0 || (unit.label !== 'Year' && unit.label !== 'Years' && unit.label !== 'Month' && unit.label !== 'Months') || detailedHtml !== '') {
+        if (unit.value > 0 || (unit.label !== 'Ano' && unit.label !== 'Anos' && unit.label !== 'Mês' && unit.label !== 'Meses') || detailedHtml !== '') {
             detailedHtml += `
             <div class="time-unit">
                 <span class="val">${unit.value}</span>
