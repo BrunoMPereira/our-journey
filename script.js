@@ -1,5 +1,21 @@
-// Set the start date to June 23, 2024 at 00:00:00
-const startDate = new Date('2024-06-23T00:00:00');
+// Set the start date to June 23, 2024 at 20:58:00
+const startDate = new Date('2024-06-23T20:58:00');
+
+// Array of your songs (feel free to add or change them!)
+const songQuotes = [
+    "Cause all of me loves all of you...",
+    "Take my hand, take my whole life too...",
+    "I could stay awake just to hear you breathing...",
+    "You're still the one I run to, the one that I belong to...",
+    "I have died every day waiting for you...",
+    "And I will always love you..."
+];
+
+function setRandomQuote() {
+    const quoteElement = document.getElementById('song-quote');
+    const randomIndex = Math.floor(Math.random() * songQuotes.length);
+    quoteElement.textContent = songQuotes[randomIndex];
+}
 
 function updateTime() {
     const now = new Date();
@@ -83,7 +99,8 @@ function hPad(num) {
     return num.toString().padStart(2, '0');
 }
 
-// Initial call to avoid 1-second delay
+// Initial calls to avoid 1-second delay
+setRandomQuote();
 updateTime();
 
 // Update every second
