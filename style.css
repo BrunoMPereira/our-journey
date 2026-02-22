@@ -213,7 +213,7 @@ header {
 .time-unit .lbl {
     font-size: 0.875rem;
     color: var(--text-secondary);
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 1.5px;
     margin-top: 0.75rem;
 }
@@ -267,6 +267,61 @@ header {
     background: linear-gradient(135deg, #ffffff 0%, #aeb4db 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Events Section */
+.events-section {
+    padding-top: 2rem;
+    animation: fadeInUp 1.6s ease-out;
+}
+
+.events-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--accent-1);
+    font-weight: 600;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.event-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.event-date {
+    font-size: 0.9rem;
+    color: var(--accent-2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.event-name {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 /* Animations */

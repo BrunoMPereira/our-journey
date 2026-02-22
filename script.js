@@ -1,6 +1,16 @@
 // Set the start date to June 23, 2024 at 20:58:00
 const startDate = new Date('2024-06-23T20:58:00');
 
+// Upcoming Events
+const upcomingEvents = [
+    { title: "Os bonitinhos vão à Maia", date: new Date(new Date().getFullYear(), 2, 1) }, // 1st of march
+    { title: "Via Sacra", date: new Date(new Date().getFullYear(), 2, 7) }, // 7th march
+    { title: "Rita Rocha", date: new Date(new Date().getFullYear(), 2, 20) }, // 20th march
+    { title: "Miguel Araujo", date: new Date(new Date().getFullYear(), 3, 29) }, // 29th april
+    { title: "Carolina de Deus", date: new Date(new Date().getFullYear(), 4, 28) }, // 28th of may
+    { title: "Quinteto da Morte", date: new Date(new Date().getFullYear(), 5, 18) } // 18th june
+];
+
 // Array of your songs (feel free to add or change them!)
 const songQuotes = [
     `I wish I could have told you that
@@ -169,6 +179,38 @@ function updateTime() {
     document.getElementById('detailed-time').innerHTML = detailedHtml;
 }
 
+function renderUpcomingEvents() {
+    const container = document.getElementById('events-container');
+    const now = new Date();
+
+    // Filter out events that already passed, and sort by date ascending
+    const futureEvents = upcomingEvents
+        .filter(event => event.date >= new Date(now.getFullYear(), now.getMonth(), now.getDate()))
+        .sort((a, b) => a.date - b.date);
+
+    if (futureEvents.length === 0) {
+        container.innerHTML = '<p style="text-align: center; width: 100%; color: var(--text-secondary);">Sem eventos agendados de momento.</p>';
+        return;
+    }
+
+    const formatter = new Intl.DateTimeFormat('pt-PT', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+
+    let eventsHtml = '';
+    futureEvents.forEach(event => {
+        eventsHtml += `
+        <div class="event-card">
+            <div class="event-date">${formatter.format(event.date)}</div>
+            <div class="event-name">${event.title}</div>
+        </div>`;
+    });
+
+    container.innerHTML = eventsHtml;
+}
+
 // Helper to pad single digits with a leading zero
 function hPad(num) {
     return num.toString().padStart(2, '0');
@@ -176,6 +218,7 @@ function hPad(num) {
 
 // Initial calls to avoid 1-second delay
 setRandomQuote();
+renderUpcomingEvents();
 updateTime();
 
 // Update every second
