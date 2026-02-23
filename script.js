@@ -7,7 +7,7 @@ const upcomingEvents = [
     { title: "Via Sacra", date: new Date(new Date().getFullYear(), 2, 7) }, // 7th march
     { title: "Rita Rocha", date: new Date(new Date().getFullYear(), 2, 20) }, // 20th march
     { title: "Miguel Araujo", date: new Date(new Date().getFullYear(), 3, 29) }, // 29th april
-    { title: "Carolina de Deus", date: new Date(new Date().getFullYear(), 2, 28) }, // 28th of may
+    { title: "Carolina de Deus", date: new Date(new Date().getFullYear(), 1, 28) }, // 28th of may
     { title: "Quinteto da Morte", date: new Date(new Date().getFullYear(), 5, 18) } // 18th june
 ];
 
