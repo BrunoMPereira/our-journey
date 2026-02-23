@@ -8,7 +8,9 @@ const upcomingEvents = [
     { title: "Rita Rocha", date: new Date(new Date().getFullYear(), 2, 20) }, // 20th march
     { title: "Miguel Araujo", date: new Date(new Date().getFullYear(), 3, 29) }, // 29th april
     { title: "Carolina de Deus", date: new Date(new Date().getFullYear(), 1, 28) }, // 28th of may
-    { title: "Quinteto da Morte", date: new Date(new Date().getFullYear(), 5, 18) } // 18th june
+    { title: "Quinteto da Morte", date: new Date(new Date().getFullYear(), 5, 18) }, // 18th june
+    { title: "Michael - O Filme", date: new Date(new Date().getFullYear(), 3, 24) }, // 24th of april
+    { title: "O Retorno da Hannah", date: new Date(new Date().getFullYear(), 2, 24) }, // 24th of march
 ];
 
 // Reasons Why I Love You
@@ -244,18 +246,20 @@ function updateTime() {
 }
 
 function renderUpcomingEvents() {
-    const container = document.getElementById('events-container');
+    const pastContainer = document.getElementById('past-events-container');
+    const futureContainer = document.getElementById('future-events-container');
     const now = new Date();
+    // Neutralizar as horas para considerar apeans as datas 
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-    // Filter out events that already passed, and sort by date ascending
+    // Arrays separados para Eventos Futuros (crescente) e Eventos Passados (decrescente: os mais recentes primeiro)
     const futureEvents = upcomingEvents
-        .filter(event => event.date >= new Date(now.getFullYear(), now.getMonth(), now.getDate()))
+        .filter(event => event.date >= today)
         .sort((a, b) => a.date - b.date);
 
-    if (futureEvents.length === 0) {
-        container.innerHTML = '<p style="text-align: center; width: 100%; color: var(--text-secondary);">Sem eventos agendados de momento.</p>';
-        return;
-    }
+    const pastEvents = upcomingEvents
+        .filter(event => event.date < today)
+        .sort((a, b) => b.date - a.date);
 
     const formatter = new Intl.DateTimeFormat('pt-PT', {
         day: 'numeric',
@@ -263,16 +267,30 @@ function renderUpcomingEvents() {
         year: 'numeric'
     });
 
-    let eventsHtml = '';
-    futureEvents.forEach(event => {
-        eventsHtml += `
-        <div class="event-card">
-            <div class="event-date">${formatter.format(event.date)}</div>
-            <div class="event-name">${event.title}</div>
-        </div>`;
-    });
+    // Função auxiliar para gerar o HTML dos cards repetidamente
+    const generateEventsHTML = (events, emptyMessage, isPast = false) => {
+        if (events.length === 0) {
+            return `<p style="text-align: center; width: 100%; color: var(--text-secondary);">${emptyMessage}</p>`;
+        }
+        return events.map(event => `
+            <div class="event-card ${isPast ? 'past-event' : ''}">
+                <div class="event-date">${formatter.format(event.date)}</div>
+                <div class="event-name">${event.title}</div>
+            </div>
+        `).join('');
+    };
 
-    container.innerHTML = eventsHtml;
+    // Aplicar a cada coluna com mensagens diferentes para Listas Vazias
+    pastContainer.innerHTML = generateEventsHTML(
+        pastEvents,
+        "Ainda não temos eventos antigos registados nesta jornada.",
+        true
+    );
+
+    futureContainer.innerHTML = generateEventsHTML(
+        futureEvents,
+        "Sem próximos planos agendados de momento."
+    );
 }
 
 // Logic for Interactive Reasons
