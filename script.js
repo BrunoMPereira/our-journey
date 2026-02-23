@@ -23,7 +23,7 @@ const loveReasons = [
     "Pela tua força e resiliência que admiro todos os dias.",
     "Porque contigo até o silêncio é confortável e especial.",
     "Pelo conforto e segurança que me transmites.",
-    "Porque te preocupas comigo e me fazes sentir valorizada.",
+    "Porque te preocupas comigo e me fazes sentir valorizado.",
     "Pela forma como me motivas a ser melhor e a seguir os meus sonhos.",
     "Pelo apoio que me dás em tudo o que faço.",
     "Pelo amor que me sinto por ti.",
