@@ -143,7 +143,7 @@ function setRandomQuote() {
     const randomLyricFormatted = songQuotes[randomIndex].replace(/\n/g, '<br>');
 
     // Combine intro text and the random quote
-    quoteElement.innerHTML = `${introText}<br><br>${randomLyricFormatted}`;
+    quoteElement.innerHTML = `${introText}<br><br><span class="music-lyric">${randomLyricFormatted}</span>`;
 }
 
 function updateTime() {
