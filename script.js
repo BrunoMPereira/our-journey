@@ -11,6 +11,26 @@ const upcomingEvents = [
     { title: "Quinteto da Morte", date: new Date(new Date().getFullYear(), 5, 18) } // 18th june
 ];
 
+// Reasons Why I Love You
+const loveReasons = [
+    "Porque o teu abraço é o meu lugar favorito no mundo.",
+    "Pela forma como me fazes rir e pelo teu sentido de humor.",
+    "Porque as nossas conversas até às tantas são as melhores.",
+    "Pelo teu olhar e a forma como me vês de verdade.",
+    "Porque amo partilhar cada momento da minha vida contigo.",
+    "Pela tua força e resiliência que admiro todos os dias.",
+    "Porque contigo até o silêncio é confortável e especial.",
+    "Pelo conforto e segurança que me transmites.",
+    "Porque te preocupas comigo e me fazes sentir valorizada.",
+    "Pela forma como me motivas a ser melhor e a seguir os meus sonhos.",
+    "Pelo apoio que me dás em tudo o que faço.",
+    "Pelo amor que me sinto por ti.",
+    "Pelo ritmo musical que nos une e se adapta a todas as situações.",
+    "Porque a vida tem mais cor contigo.",
+    "Porque me fizeste acreditar num amor genuíno, verdadeiro e puro.",
+    "És a minha melhor amiga e fiel companheira."
+];
+
 // Array of your songs (feel free to add or change them!)
 const songQuotes = [
     `I wish I could have told you that
@@ -255,6 +275,32 @@ function renderUpcomingEvents() {
     container.innerHTML = eventsHtml;
 }
 
+// Logic for Interactive Reasons
+function setRandomReason() {
+    const reasonText = document.getElementById('reason-text');
+    // Save current reason to avoid repeating identically in a row
+    const currentReason = reasonText.textContent;
+    let newReason = currentReason;
+
+    // Pick a new reason that is different from the current one
+    while (newReason === currentReason) {
+        const randomIndex = Math.floor(Math.random() * loveReasons.length);
+        newReason = loveReasons[randomIndex];
+    }
+
+    // Fade out
+    reasonText.style.opacity = 0;
+
+    // Wait for the fade out to finish (400ms matching CSS), then change text and fade back in
+    setTimeout(() => {
+        reasonText.textContent = newReason;
+        reasonText.style.opacity = 1;
+    }, 400);
+}
+
+// Initialize button event listener
+document.getElementById('btn-next-reason').addEventListener('click', setRandomReason);
+
 // Helper to pad single digits with a leading zero
 function hPad(num) {
     return num.toString().padStart(2, '0');
@@ -263,6 +309,7 @@ function hPad(num) {
 // Initial calls to avoid 1-second delay
 setRandomQuote();
 renderUpcomingEvents();
+setRandomReason(); // Load first reason dynamically
 updateTime();
 
 // Update every second
