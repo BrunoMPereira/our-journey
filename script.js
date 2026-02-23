@@ -85,7 +85,51 @@ Turn around and slide`,
     `Oh this is an S.O.S.
 Don't wanna second guess
 This is the bottom line
-It's true`
+It's true`,
+
+    `Parado no trânsito infernal da cidade
+Já nem controlo a ansiedade
+A fila onde me encontro
+Pouco ou nada avança
+Só o relógio não se cansa
+
+Conto a conta-gotas o tempo que passa
+Vejo o sol lá fora a fazer-me pirraça
+Já são quatro e meia está quase na hora`,
+
+    `Esperei por ti nas capicuas
+São 20:20 onde é quе estás?
+É que eu vi uma foto tua е já sei onde é que vais
+São 20:20 onde é que estás?`,
+
+    `To let the fire come out in me
+I'm what you're up against, just letting you know
+I keep givin' you the fire
+I'ma heat it up
+Under my control
+Here's the night that you've been waiting on`,
+
+    `Mas quando o universo decide acreditar
+É certeza dar certo, ninguém pode mudar
+Quem torceu pra gente dar errado, vai ter que aceitar
+Como é que poderia dar errado entre você e eu?
+Se o nosso cupido foi Deus`,
+
+    `Abraças-me e perguntas-me ao ouvido
+O porquê de termos de dormir
+Eu só durmo pra sonhar contigo
+Vemo-nos nos sonhos, não nos vamos despedir`,
+
+    `God went crazy when he gave me you
+Must've done something good in another life
+Fifty Shades with them baby blues
+So immaculately designed `,
+
+    `They say that good things take time
+But really great things happen in a blink of an eye
+Thought the chances to meet somebody like you were a million to one
+I can't believe it
+You're one in a million`
 ];
 
 function setRandomQuote() {
