@@ -7,8 +7,8 @@ const upcomingEvents = [
     { title: "Via Sacra", location: "Praça São João Evangelista", date: new Date(new Date().getFullYear(), 2, 7) }, // 7th march
     { title: "Rita Rocha", location: "Coliseu do Porto", date: new Date(new Date().getFullYear(), 2, 20) }, // 20th march
     { title: "Miguel Araujo", location: "Theatro Circo", date: new Date(new Date().getFullYear(), 3, 29) }, // 29th april
-    { title: "Carolina de Deus", location: "Teatro São da Bandeira", date: new Date(new Date().getFullYear(), 1, 28) }, // 28th of may
-    { title: "Quinteto da Morte", location: "Teatro São da Bandeira", date: new Date(new Date().getFullYear(), 5, 18) }, // 18th june
+    { title: "Carolina de Deus", location: "Teatro Sá da Bandeira", date: new Date(new Date().getFullYear(), 1, 28) }, // 28th of may
+    { title: "Quinteto da Morte", location: "Teatro Sá da Bandeira", date: new Date(new Date().getFullYear(), 5, 18) }, // 18th june
     { title: "Michael - O Filme", location: "Sala a designar", date: new Date(new Date().getFullYear(), 3, 24) }, // 24th of april
     { title: "O Retorno da Hannah", location: "Sala a designar", date: new Date(new Date().getFullYear(), 2, 24) }, // 24th of march
     { title: "Quatro e Meia", location: "Póvoa Arena", date: new Date(2027, 1, 13) }, // 13th of february
