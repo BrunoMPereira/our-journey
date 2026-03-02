@@ -347,14 +347,19 @@ function renderLocationStats() {
         locationCounts[loc] = (locationCounts[loc] || 0) + 1;
     });
 
+    const totalEvents = pastEvents.length;
     const sortedLocations = Object.entries(locationCounts).sort((a, b) => b[1] - a[1]);
 
-    statsContainer.innerHTML = sortedLocations.map(([location, count]) => `
+    statsContainer.innerHTML = sortedLocations.map(([location, count]) => {
+        const percentage = Math.round((count / totalEvents) * 100);
+        return `
         <div class="stat-location-card">
             <div class="stat-location-count">${count}</div>
             <div class="stat-location-name">${location}</div>
+            <div class="stat-location-percent">${percentage}% dos eventos</div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Initial calls to avoid 1-second delay
