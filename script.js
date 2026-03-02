@@ -356,7 +356,7 @@ function renderLocationStats() {
         <div class="stat-location-card">
             <div class="stat-location-count">${count}</div>
             <div class="stat-location-name">${location}</div>
-            <div class="stat-location-percent">${percentage}% dos eventos</div>
+            <div class="stat-location-percent">${percentage}% dos p(e)lanos</div>
         </div>
         `;
     }).join('');
