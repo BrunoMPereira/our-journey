@@ -3,14 +3,15 @@ const startDate = new Date('2024-06-23T20:58:00');
 
 // Upcoming Events
 const upcomingEvents = [
-    { title: "Os bonitinhos vão à Maia", date: new Date(new Date().getFullYear(), 2, 1) }, // 1st of march
-    { title: "Via Sacra", date: new Date(new Date().getFullYear(), 2, 7) }, // 7th march
-    { title: "Rita Rocha", date: new Date(new Date().getFullYear(), 2, 20) }, // 20th march
-    { title: "Miguel Araujo", date: new Date(new Date().getFullYear(), 3, 29) }, // 29th april
-    { title: "Carolina de Deus", date: new Date(new Date().getFullYear(), 1, 28) }, // 28th of may
-    { title: "Quinteto da Morte", date: new Date(new Date().getFullYear(), 5, 18) }, // 18th june
-    { title: "Michael - O Filme", date: new Date(new Date().getFullYear(), 3, 24) }, // 24th of april
-    { title: "O Retorno da Hannah", date: new Date(new Date().getFullYear(), 2, 24) }, // 24th of march
+    { title: "Os bonitinhos vão à Maia", location: "Maia", date: new Date(new Date().getFullYear(), 2, 1) }, // 1st of march
+    { title: "Via Sacra", location: "Praça São João Evangelista", date: new Date(new Date().getFullYear(), 2, 7) }, // 7th march
+    { title: "Rita Rocha", location: "Coliseu do Porto", date: new Date(new Date().getFullYear(), 2, 20) }, // 20th march
+    { title: "Miguel Araujo", location: "Theatro Circo", date: new Date(new Date().getFullYear(), 3, 29) }, // 29th april
+    { title: "Carolina de Deus", location: "Teatro São da Bandeira", date: new Date(new Date().getFullYear(), 1, 28) }, // 28th of may
+    { title: "Quinteto da Morte", location: "Teatro São da Bandeira", date: new Date(new Date().getFullYear(), 5, 18) }, // 18th june
+    { title: "Michael - O Filme", location: "Sala a designar", date: new Date(new Date().getFullYear(), 3, 24) }, // 24th of april
+    { title: "O Retorno da Hannah", location: "Sala a designar", date: new Date(new Date().getFullYear(), 2, 24) }, // 24th of march
+    { title: "Quatro e Meia", location: "Póvoa Arena", date: new Date(2027, 1, 13) }, // 13th of february
 ];
 
 // Reasons Why I Love You
@@ -275,7 +276,10 @@ function renderUpcomingEvents() {
         return events.map(event => `
             <div class="event-card ${isPast ? 'past-event' : ''}">
                 <div class="event-date">${formatter.format(event.date)}</div>
-                <div class="event-name">${event.title}</div>
+                <div class="event-name">
+                    ${event.title}
+                    ${event.location ? `<div class="event-location"><i class="fa-solid fa-location-dot"></i> ${event.location}</div>` : ''}
+                </div>
             </div>
         `).join('');
     };
@@ -324,9 +328,40 @@ function hPad(num) {
     return num.toString().padStart(2, '0');
 }
 
+function renderLocationStats() {
+    const statsContainer = document.getElementById('location-stats-container');
+    if (!statsContainer) return;
+
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    const pastEvents = upcomingEvents.filter(event => event.date < today && event.location);
+
+    if (pastEvents.length === 0) {
+        statsContainer.innerHTML = '<p style="color: var(--text-secondary); text-align: center; width: 100%;">Ainda não temos estatísticas suficientes.</p>';
+        return;
+    }
+
+    const locationCounts = {};
+    pastEvents.forEach(event => {
+        const loc = event.location;
+        locationCounts[loc] = (locationCounts[loc] || 0) + 1;
+    });
+
+    const sortedLocations = Object.entries(locationCounts).sort((a, b) => b[1] - a[1]);
+
+    statsContainer.innerHTML = sortedLocations.map(([location, count]) => `
+        <div class="stat-location-card">
+            <div class="stat-location-count">${count}</div>
+            <div class="stat-location-name">${location}</div>
+        </div>
+    `).join('');
+}
+
 // Initial calls to avoid 1-second delay
 setRandomQuote();
 renderUpcomingEvents();
+renderLocationStats();
 setRandomReason(); // Load first reason dynamically
 updateTime();
 
