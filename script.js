@@ -278,7 +278,6 @@ function renderUpcomingEvents() {
                 <div class="event-date">${formatter.format(event.date)}</div>
                 <div class="event-name">
                     ${event.title}
-                    ${event.location ? `<div class="event-location"><i class="fa-solid fa-location-dot"></i> ${event.location}</div>` : ''}
                 </div>
             </div>
         `).join('');
