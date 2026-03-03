@@ -12,6 +12,8 @@ const upcomingEvents = [
     { title: "Michael - O Filme", location: "Sala a designar", date: new Date(new Date().getFullYear(), 3, 24) }, // 24th of april
     { title: "O Retorno da Hannah", location: "Sala a designar", date: new Date(new Date().getFullYear(), 2, 24) }, // 24th of march
     { title: "Quatro e Meia", location: "Póvoa Arena", date: new Date(2027, 1, 13) }, // 13th of february
+    { title: "Tiago Nogueira e João Só", location: "Casino Póvoa", date: new Date(new Date().getFullYear(), 2, 21) }, // 21st march
+
 ];
 
 // Reasons Why I Love You
