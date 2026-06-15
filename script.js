@@ -3,17 +3,18 @@ const startDate = new Date('2024-06-23T20:58:00');
 
 // Upcoming Events
 const upcomingEvents = [
-    { title: "Os bonitinhos vão à Maia", location: "Maia", date: new Date(new Date().getFullYear(), 2, 1) }, // 1st of march
-    { title: "Via Sacra", location: "Praça São João Evangelista", date: new Date(new Date().getFullYear(), 2, 7) }, // 7th march
-    { title: "Rita Rocha", location: "Coliseu do Porto", date: new Date(new Date().getFullYear(), 2, 20) }, // 20th march
-    { title: "Miguel Araujo", location: "Theatro Circo", date: new Date(new Date().getFullYear(), 3, 29) }, // 29th april
-    { title: "Carolina de Deus", location: "Teatro Sá da Bandeira", date: new Date(new Date().getFullYear(), 1, 28) }, // 28th of may
-    { title: "Quinteto da Morte", location: "Teatro Sá da Bandeira", date: new Date(new Date().getFullYear(), 5, 18) }, // 18th june
-    { title: "Michael - O Filme", location: "Sala a designar", date: new Date(new Date().getFullYear(), 3, 24) }, // 24th of april
-    { title: "O Retorno da Hannah", location: "Sala a designar", date: new Date(new Date().getFullYear(), 2, 24) }, // 24th of march
+    { title: "Os bonitinhos vão à Maia", location: "Maia", date: new Date(2026, 2, 1) }, // 1st of march
+    { title: "Via Sacra", location: "Praça São João Evangelista", date: new Date(2026, 2, 7) }, // 7th march
+    { title: "Rita Rocha", location: "Coliseu do Porto", date: new Date(2026, 2, 20) }, // 20th march
+    { title: "Miguel Araujo", location: "Theatro Circo", date: new Date(2026, 3, 29) }, // 29th april
+    { title: "Carolina de Deus", location: "Teatro Sá da Bandeira", date: new Date(2026, 1, 28) }, // 28th of may
+    { title: "Quinteto da Morte", location: "Teatro Sá da Bandeira", date: new Date(2026, 5, 18) }, // 18th june
+    { title: "Michael - O Filme", location: "Sala a designar", date: new Date(2026, 3, 24) }, // 24th of april
+    { title: "O Retorno da Hannah", location: "Sala a designar", date: new Date(2026, 2, 24) }, // 24th of march
     { title: "Quatro e Meia", location: "Póvoa Arena", date: new Date(2027, 1, 13) }, // 13th of february
-    { title: "Tiago Nogueira e João Só", location: "Casino Póvoa", date: new Date(new Date().getFullYear(), 2, 21) }, // 21st march
-
+    { title: "Tiago Nogueira e João Só", location: "Casino Póvoa", date: new Date(2026, 2, 21) }, // 21st march
+    { title: "Miguel Araujo", location: "Matosinhos", date: new Date(2026, 4, 22) },
+    { title: "Quatro e Meia", location: "Maia", date: new Date(2026, 5, 21) },
 ];
 
 // Reasons Why I Love You
