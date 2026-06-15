@@ -625,6 +625,34 @@ header {
     animation: fadeInUp 1.7s ease-out;
 }
 
+.stats-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.stats-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stats-subtitle {
+    text-align: center;
+    font-size: 1.35rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.stats-subtitle i {
+    color: var(--accent-1);
+}
+
 .stats-grid {
     display: flex;
     flex-wrap: wrap;
@@ -634,6 +662,7 @@ header {
     margin: 0 auto;
 }
 
+.stat-item-card,
 .stat-location-card {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -649,6 +678,7 @@ header {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.stat-item-card:hover,
 .stat-location-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -656,6 +686,7 @@ header {
     background: rgba(255, 255, 255, 0.08);
 }
 
+.stat-item-count,
 .stat-location-count {
     font-size: 3rem;
     font-weight: 800;
@@ -666,6 +697,7 @@ header {
     line-height: 1;
 }
 
+.stat-item-name,
 .stat-location-name {
     font-size: 1.1rem;
     color: var(--text-secondary);
@@ -675,6 +707,7 @@ header {
     margin-bottom: 0.2rem;
 }
 
+.stat-item-percent,
 .stat-location-percent {
     font-size: 0.85rem;
     color: var(--accent-2);
