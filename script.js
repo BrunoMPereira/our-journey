@@ -5,16 +5,16 @@ const startDate = new Date('2024-06-23T20:58:00');
 const upcomingEvents = [
     { title: "Os bonitinhos vão à Maia", location: "Maia", date: new Date(2026, 2, 1) }, // 1st of march
     { title: "Via Sacra", location: "Praça São João Evangelista", date: new Date(2026, 2, 7) }, // 7th march
-    { title: "Rita Rocha", location: "Coliseu do Porto", date: new Date(2026, 2, 20) }, // 20th march
-    { title: "Miguel Araujo", location: "Theatro Circo", date: new Date(2026, 3, 29) }, // 29th april
-    { title: "Carolina de Deus", location: "Teatro Sá da Bandeira", date: new Date(2026, 1, 28) }, // 28th of may
-    { title: "Quinteto da Morte", location: "Teatro Sá da Bandeira", date: new Date(2026, 5, 18) }, // 18th june
+    { title: "Rita Rocha", location: "Coliseu do Porto", date: new Date(2026, 2, 20), artist: "Rita Rocha" }, // 20th march
+    { title: "Miguel Araujo", location: "Theatro Circo", date: new Date(2026, 3, 29), artist: "Miguel Araujo" }, // 29th april
+    { title: "Carolina de Deus", location: "Teatro Sá da Bandeira", date: new Date(2026, 1, 28), artist: "Carolina de Deus" }, // 28th of may
+    { title: "Quinteto da Morte", location: "Teatro Sá da Bandeira", date: new Date(2026, 5, 18), artist: "Quinteto da Morte" }, // 18th june
     { title: "Michael - O Filme", location: "Sala a designar", date: new Date(2026, 3, 24) }, // 24th of april
     { title: "O Retorno da Hannah", location: "Sala a designar", date: new Date(2026, 2, 24) }, // 24th of march
-    { title: "Quatro e Meia", location: "Póvoa Arena", date: new Date(2027, 1, 13) }, // 13th of february
-    { title: "Tiago Nogueira e João Só", location: "Casino Póvoa", date: new Date(2026, 2, 21) }, // 21st march
-    { title: "Miguel Araujo", location: "Matosinhos", date: new Date(2026, 4, 22) },
-    { title: "Quatro e Meia", location: "Maia", date: new Date(2026, 5, 21) },
+    { title: "Quatro e Meia", location: "Póvoa Arena", date: new Date(2027, 1, 13), artist: "Os Quatro e Meia" }, // 13th of february
+    { title: "Tiago Nogueira e João Só", location: "Casino Póvoa", date: new Date(2026, 2, 21), artist: "Tiago Nogueira e João Só" }, // 21st march
+    { title: "Miguel Araujo", location: "Matosinhos", date: new Date(2026, 4, 22), artist: "Miguel Araujo" },
+    { title: "Quatro e Meia", location: "Maia", date: new Date(2026, 5, 21), artist: "Os Quatro e Meia" },
 ];
 
 // Reasons Why I Love You
@@ -356,10 +356,45 @@ function renderLocationStats() {
     statsContainer.innerHTML = sortedLocations.map(([location, count]) => {
         const percentage = Math.round((count / totalEvents) * 100);
         return `
-        <div class="stat-location-card">
-            <div class="stat-location-count">${count}</div>
-            <div class="stat-location-name">${location}</div>
-            <div class="stat-location-percent">${percentage}% dos p(e)lanos</div>
+        <div class="stat-item-card">
+            <div class="stat-item-count">${count}</div>
+            <div class="stat-item-name">${location}</div>
+            <div class="stat-item-percent">${percentage}% dos p(e)lanos</div>
+        </div>
+        `;
+    }).join('');
+}
+
+function renderArtistStats() {
+    const statsContainer = document.getElementById('artist-stats-container');
+    if (!statsContainer) return;
+
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    const pastEvents = upcomingEvents.filter(event => event.date < today && event.artist);
+
+    if (pastEvents.length === 0) {
+        statsContainer.innerHTML = '<p style="color: var(--text-secondary); text-align: center; width: 100%;">Ainda não temos estatísticas suficientes.</p>';
+        return;
+    }
+
+    const artistCounts = {};
+    pastEvents.forEach(event => {
+        const art = event.artist;
+        artistCounts[art] = (artistCounts[art] || 0) + 1;
+    });
+
+    const totalEvents = pastEvents.length;
+    const sortedArtists = Object.entries(artistCounts).sort((a, b) => b[1] - a[1]);
+
+    statsContainer.innerHTML = sortedArtists.map(([artist, count]) => {
+        const percentage = Math.round((count / totalEvents) * 100);
+        return `
+        <div class="stat-item-card">
+            <div class="stat-item-count">${count}</div>
+            <div class="stat-item-name">${artist}</div>
+            <div class="stat-item-percent">${percentage}% dos concertos</div>
         </div>
         `;
     }).join('');
@@ -369,6 +404,7 @@ function renderLocationStats() {
 setRandomQuote();
 renderUpcomingEvents();
 renderLocationStats();
+renderArtistStats();
 setRandomReason(); // Load first reason dynamically
 updateTime();
 
