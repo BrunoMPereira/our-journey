@@ -198,8 +198,9 @@ function updateTime() {
 
     // Update the DOM for big numbers
     const secondsInMillions = Math.floor(totalSeconds / 1000000);
+    const minutesInMillions = (totalMinutes / 1000000).toFixed(1);
     document.getElementById('total-seconds').textContent = `> ${secondsInMillions}M`;
-    document.getElementById('total-minutes').textContent = formatNumber(totalMinutes);
+    document.getElementById('total-minutes').textContent = `${minutesInMillions}M`;
     document.getElementById('total-hours').textContent = formatNumber(totalHours);
 
     // Calculate detailed breakdown (Years, Months, Days, Hours, Minutes, Seconds)
