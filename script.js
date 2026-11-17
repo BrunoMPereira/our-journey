@@ -25,7 +25,7 @@ const upcomingEvents = [
     { title: "Banda na Maia", location: "Fórum Maia", date: new Date(2026, 9, 17), artist: "Banda de Música de Moreira da Maia" }, // 17th of october
     { title: "Elisa & Tiago c/ BD", location: "Fórum Maia", date: new Date(2026, 10, 19), artist: "Elisa & Tiago Nogueira" }, // 19th of november
     { title: "Gelo 2+1", location: "Mar Shopping", date: new Date(2026, 11, 28), artist: "Rapunzel" }, // 28th of december
-    { title: "Mika na Maia", location: "Maia", date: new Date(2027, 6, 11), artist: "Mikael" }, // 11th of july
+    { title: "Mika na Maia", location: "Maia", date: new Date(2026, 6, 11), artist: "Mikael" }, // 11th of july
 ];
 
 // Reasons Why I Love You
