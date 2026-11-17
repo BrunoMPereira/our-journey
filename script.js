@@ -22,9 +22,9 @@ const upcomingEvents = [
     { title: "Conferência \"Como queria estar\"", location: "Lisboa", date: new Date(2026, 8, 8), artist: "2+1" }, // 8th of september
     { title: "Resgaste da Lancheira Perdida", location: "Lisboa", date: new Date(2026, 9, 5), artist: "2+1" }, // 5th of october
     { title: "4 no KBQ", location: "Póvoa de Varzim", date: new Date(2026, 9, 10), artist: "Música, comida e festividades" }, // 10th of october
-    { title: "Banda na Maia", location: "Fórum Maia", date: new Date(2026, 9, 17), artist: "Banda de Música de Moreira da Maia" }, // 17th of october
-    { title: "Elisa & Tiago c/ BD", location: "Fórum Maia", date: new Date(2026, 10, 19), artist: "Elisa & Tiago Nogueira" }, // 19th of november
-    { title: "Gelo 2+1", location: "Mar Shopping", date: new Date(2026, 11, 28), artist: "Rapunzel" }, // 28th of december
+    { title: "Banda na Maia com Ópera", location: "Fórum Maia", date: new Date(2026, 9, 17), artist: "Banda de Música de Moreira da Maia" }, // 17th of october
+    { title: "Elisa & Tiago", location: "Fórum Maia", date: new Date(2026, 10, 19), artist: "Elisa & Tiago Nogueira" }, // 19th of november
+    { title: "Rapunzel no Gelo", location: "Mar Shopping", date: new Date(2026, 11, 28), artist: "2+1" }, // 28th of december
     { title: "Mika na Maia", location: "Maia", date: new Date(2026, 6, 11), artist: "Mikael" }, // 11th of july
 ];
 
@@ -198,9 +198,9 @@ function updateTime() {
 
     // Update the DOM for big numbers
     const secondsInMillions = Math.floor(totalSeconds / 1000000);
-    const minutesInMillions = (totalMinutes / 1000000).toFixed(1);
+    const minutesInMillions = (Math.floor(totalMinutes / 100000) / 10).toFixed(1);
     document.getElementById('total-seconds').textContent = `> ${secondsInMillions}M`;
-    document.getElementById('total-minutes').textContent = `${minutesInMillions}M`;
+    document.getElementById('total-minutes').textContent = `> ${minutesInMillions}M`;
     document.getElementById('total-hours').textContent = formatNumber(totalHours);
 
     // Calculate detailed breakdown (Years, Months, Days, Hours, Minutes, Seconds)
