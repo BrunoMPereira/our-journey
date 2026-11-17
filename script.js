@@ -15,8 +15,8 @@ const upcomingEvents = [
     { title: "Tiago Nogueira e João Só", location: "Casino Póvoa", date: new Date(2026, 2, 21), artist: "Tiago Nogueira e João Só" }, // 21st march
     { title: "Miguel Araujo", location: "Matosinhos", date: new Date(2026, 4, 22), artist: "Miguel Araujo" },
     { title: "Quatro e Meia", location: "Maia", date: new Date(2026, 5, 21), artist: "Os Quatro e Meia" },
-    { title: "Tarados à Primeira Vista", location: "Teatro Sá da Bandeira", date: new Date(2026, 1, 20), artist: "Música, comida e festividades" }, // 20th of february
-    { title: "Psicólogo por 1 dia", location: "Teatro Sá da Bandeira", date: new Date(2026, 4, 8), artist: "2+1" }, // 8th of may
+    { title: "Tarados à Primeira Vista", location: "Teatro Sá da Bandeira", date: new Date(2027, 1, 20), artist: "Música, comida e festividades" }, // 20th of february
+    { title: "Psicólogo por 1 dia", location: "Teatro Sá da Bandeira", date: new Date(2027, 4, 8), artist: "2+1" }, // 8th of may
     { title: "Vidal na Vila", location: "Praça José Régio", date: new Date(2026, 7, 15), artist: "Carlos Vidal" }, // 15th of august
     { title: "Quatro na Agro", location: "Póvoa de Varzim", date: new Date(2026, 8, 5), artist: "Os Quatro e Meia" }, // 5th of september
     { title: "Conferência \"Como queria estar\"", location: "Lisboa", date: new Date(2026, 8, 8), artist: "2+1" }, // 8th of september
