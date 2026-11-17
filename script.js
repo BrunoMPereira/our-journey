@@ -9,12 +9,23 @@ const upcomingEvents = [
     { title: "Miguel Araujo", location: "Theatro Circo", date: new Date(2026, 3, 29), artist: "Miguel Araujo" }, // 29th april
     { title: "Carolina de Deus", location: "Teatro Sá da Bandeira", date: new Date(2026, 1, 28), artist: "Carolina de Deus" }, // 28th of may
     { title: "Quinteto da Morte", location: "Teatro Sá da Bandeira", date: new Date(2026, 5, 18), artist: "Quinteto da Morte" }, // 18th june
-    { title: "Michael - O Filme", location: "Sala a designar", date: new Date(2026, 3, 24) }, // 24th of april
+    { title: "Michael - O Filme", location: "Mar Shopping", date: new Date(2026, 5, 27) }, // 27th of june
     { title: "O Retorno da Hannah", location: "Sala a designar", date: new Date(2026, 2, 24) }, // 24th of march
     { title: "Quatro e Meia", location: "Póvoa Arena", date: new Date(2027, 1, 13), artist: "Os Quatro e Meia" }, // 13th of february
     { title: "Tiago Nogueira e João Só", location: "Casino Póvoa", date: new Date(2026, 2, 21), artist: "Tiago Nogueira e João Só" }, // 21st march
     { title: "Miguel Araujo", location: "Matosinhos", date: new Date(2026, 4, 22), artist: "Miguel Araujo" },
     { title: "Quatro e Meia", location: "Maia", date: new Date(2026, 5, 21), artist: "Os Quatro e Meia" },
+    { title: "Tarados à Primeira Vista", location: "Teatro Sá da Bandeira", date: new Date(2026, 1, 20), artist: "Música, comida e festividades" }, // 20th of february
+    { title: "Psicólogo por 1 dia", location: "Teatro Sá da Bandeira", date: new Date(2026, 4, 8), artist: "2+1" }, // 8th of may
+    { title: "Vidal na Vila", location: "Praça José Régio", date: new Date(2026, 7, 15), artist: "Carlos Vidal" }, // 15th of august
+    { title: "Quatro na Agro", location: "Póvoa de Varzim", date: new Date(2026, 8, 5), artist: "Os Quatro e Meia" }, // 5th of september
+    { title: "Conferência \"Como queria estar\"", location: "Lisboa", date: new Date(2026, 8, 8), artist: "2+1" }, // 8th of september
+    { title: "Resgaste da Lancheira Perdida", location: "Lisboa", date: new Date(2026, 9, 5), artist: "2+1" }, // 5th of october
+    { title: "4 no KBQ", location: "Póvoa de Varzim", date: new Date(2026, 9, 10), artist: "Música, comida e festividades" }, // 10th of october
+    { title: "Banda na Maia", location: "Fórum Maia", date: new Date(2026, 9, 17), artist: "Banda de Música de Moreira da Maia" }, // 17th of october
+    { title: "Elisa & Tiago c/ BD", location: "Fórum Maia", date: new Date(2026, 10, 19), artist: "Elisa & Tiago Nogueira" }, // 19th of november
+    { title: "Gelo 2+1", location: "Mar Shopping", date: new Date(2026, 11, 28), artist: "Rapunzel" }, // 28th of december
+    { title: "Mika na Maia", location: "Maia", date: new Date(2027, 6, 11), artist: "Mikael" }, // 11th of july
 ];
 
 // Reasons Why I Love You
